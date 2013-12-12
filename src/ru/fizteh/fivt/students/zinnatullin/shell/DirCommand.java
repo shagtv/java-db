@@ -15,7 +15,8 @@ public class DirCommand implements ShellCommand {
         }
         return true;
     }
-    public String getName() {
+	
+    public static String getName() {
         return "dir";
     }
 

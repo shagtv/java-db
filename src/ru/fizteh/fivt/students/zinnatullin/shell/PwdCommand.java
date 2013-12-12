@@ -11,7 +11,8 @@ public class PwdCommand implements ShellCommand {
         }
         return false;
     }
-    public final String getName() {
+	
+    public static String getName() {
         return "pwd";
     }
 

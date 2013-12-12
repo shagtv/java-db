@@ -13,7 +13,8 @@ public class CpCommand implements ShellCommand {
 		
         return FileSystem.safeCopy(source, destination, getName());
     }
-    public String getName() {
+	
+    public static String getName() {
         return "cp";
     }
 

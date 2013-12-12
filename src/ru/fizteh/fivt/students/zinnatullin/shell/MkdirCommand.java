@@ -14,7 +14,8 @@ public class MkdirCommand implements ShellCommand {
         return true;
         
     }
-    public String getName() {
+	
+    public static String getName() {
         return "mkdir";
     }
 

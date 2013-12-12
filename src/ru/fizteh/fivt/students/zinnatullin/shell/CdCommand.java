@@ -19,7 +19,8 @@ public class CdCommand implements ShellCommand {
         }
         return false;
     }
-    public String getName() {
+	
+    public static String getName() {
         return "cd";
     }
 

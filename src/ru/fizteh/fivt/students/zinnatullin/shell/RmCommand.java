@@ -16,7 +16,8 @@ public class RmCommand implements ShellCommand {
 		System.out.println(args[0] + ": cannot remove \'" + args[1] + "\': No such file or directory");
         return false;
     }
-    public String getName() {
+	
+    public static String getName() {
         return "rm";
     }
 

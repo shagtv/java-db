@@ -9,7 +9,8 @@ public class ExitCommand implements ShellCommand {
         }
         return true;
     }
-    public String getName() {
+    
+	public static String getName() {
         return "exit";
     }
 
