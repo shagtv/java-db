@@ -59,7 +59,7 @@ public class Shell {
             if (commandName == null) {
                 break;
             }
-            String tokens[] = commandName.split("[ \\t\\s]");
+            String tokens[] = commandName.split("[\\s]");
             boolean status = false;
             boolean exists = false;
             for (ShellCommand command : commands) {
@@ -83,7 +83,7 @@ public class Shell {
     }
 	
 	public void setDB(){
-		System.setProperty("fizteh.db.dir", "/home/shagtv/java/work/db/");
+		System.setProperty("fizteh.db.dir", "/home/timur/java/work/db/");
 		String dir = System.getProperty("fizteh.db.dir");
 		
 		File file =  new File(dir);

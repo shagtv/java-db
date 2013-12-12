@@ -80,7 +80,7 @@ public class Shell {
             if (commandName == null) {
                 break;
             }
-            String tokens[] = commandName.split("[ \\t\\s]");
+            String tokens[] = commandName.split("[\\s]");
             boolean status = false;
             boolean exists = false;
             for (ShellCommand command : commands) {
