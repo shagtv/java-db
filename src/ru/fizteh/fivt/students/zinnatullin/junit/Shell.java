@@ -20,6 +20,9 @@ public class Shell {
 		commands.add(new CreateCommand());
 		commands.add(new DropCommand());
 		commands.add(new UseCommand());
+		commands.add(new CommitCommand());
+		commands.add(new RollbackCommand());
+		commands.add(new SizeCommand());
         commands.add(new PutCommand());
         commands.add(new GetCommand());
         commands.add(new RemoveCommand());
@@ -36,8 +39,18 @@ public class Shell {
 	public static void main(String[] args) throws IOException{
 		
 		String dbPath = System.getProperty("fizteh.db.dir");
+		if(dbPath.isEmpty()){
+			printMessage("Empty db path");
+			System.exit(1);
+		}
+		
 		DBTableProviderFactory providerFactory = new DBTableProviderFactory();
 		DBTableProvider provider = (DBTableProvider)providerFactory.create(dbPath);
+		
+		if(provider == null){
+			printMessage("Incorrect db path");
+			System.exit(1);
+		}
 		Shell.getInstance().provider = provider;
 		
 		if (args.length == 0) {

@@ -15,6 +15,11 @@ public class UseCommand implements ShellCommand {
 			return false;
 		}
 		
+		if(Shell.getInstance().provider == null){
+			Shell.printMessage("Empty table provider");
+			return false;
+		}
+		
 		DBTable table = (DBTable)Shell.getInstance().provider.getTable(args[1]);
         if(table != null){
 			Shell.printMessage("use " + args[1]);

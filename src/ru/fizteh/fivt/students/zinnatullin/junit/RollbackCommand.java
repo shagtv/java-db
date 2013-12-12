@@ -1,33 +1,28 @@
 package ru.fizteh.fivt.students.zinnatullin.junit;
 
-public class GetCommand implements ShellCommand {
+public class RollbackCommand implements ShellCommand {
 
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
-        if (args.length != 2) {
+        if (args.length != 1) {
             Shell.printMessage(args[0] + ": invalid number of arguments in the \'" + args[0] + "\' command");
             return false;
         }
-		
+
 		if(Shell.getInstance().table == null){
 			Shell.printMessage("empty table");
 			return false;
 		}
 		
-		String value = null;
-		value = Shell.getInstance().table.get(args[1]);
-		if(value != null){
-			Shell.printMessage("found");
-			Shell.printMessage(value);
-		} else {
-			Shell.printMessage("not found");
-		}
+		int operations = 0;
+		operations = Shell.getInstance().table.rollback();
+		Shell.printMessage("operations: " + operations);
         return true;
     }
 	
 	@Override
     public String getName() {
-        return "get";
+        return "rollback";
     }
 }
