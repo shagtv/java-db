@@ -38,7 +38,7 @@ public class DBTable implements Table{
 			HashMap dirMap = (HashMap)data.get(nDir);
 			if(dirMap != null){
 				HashMap fileMap = (HashMap)dirMap.get(nFile);
-				if(fileMap.containsKey(key)){
+				if(fileMap != null && fileMap.containsKey(key)){
 					value = (String)fileMap.get(key);
 				}
 			}
@@ -70,6 +70,9 @@ public class DBTable implements Table{
 			dirMap.put(nFile, fileMap);
 			data.put(nDir, dirMap);
 		}
+		if(!oldValue.equals(value)){
+			operations++;
+		}
 		return oldValue;
 	}
 
@@ -89,6 +92,7 @@ public class DBTable implements Table{
 			dirMap.put(nFile, fileMap);
 			data.put(nDir, dirMap);
 		}
+		operations++;
 		return oldValue;
 	}
 
@@ -104,9 +108,10 @@ public class DBTable implements Table{
 				String nDir = entry.getKey();
 				HashMap dirMap = entry.getValue();
 				if(!dirMap.isEmpty()){
-					for(it = dirMap.entrySet().iterator(); it.hasNext();){
-						String nFile = entry.getKey();
-						HashMap value = entry.getValue();
+					for(Iterator it1 = dirMap.entrySet().iterator(); it1.hasNext();){
+						Map.Entry<String, HashMap> entry1 = (Map.Entry<String, HashMap>)it1.next();
+						String nFile = entry1.getKey();
+						HashMap value = entry1.getValue();
 						count += value.size();
 					}
 				}
@@ -123,8 +128,9 @@ public class DBTable implements Table{
 				String nDir = entry.getKey();
 				HashMap dirMap = entry.getValue();
 				if(!dirMap.isEmpty()){
-					for(it = dirMap.entrySet().iterator(); it.hasNext();){
-						String nFile = entry.getKey();
+					for(Iterator it1 = dirMap.entrySet().iterator(); it1.hasNext();){
+						Map.Entry<String, HashMap> entry1 = (Map.Entry<String, HashMap>)it1.next();
+						String nFile = entry1.getKey();
 						saveData(nDir, nFile);
 					}
 				}

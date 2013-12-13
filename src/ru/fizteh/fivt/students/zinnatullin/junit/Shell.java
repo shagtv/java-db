@@ -96,7 +96,7 @@ public class Shell {
             if (!status && isPackage) {
                 return false;
             }
-            if (tokens[0].equals("exit")) {
+            if (tokens[0].equals("exit") && status) {
                 return true;
             }
         }
