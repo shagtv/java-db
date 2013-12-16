@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.junit;
 
 public class UseCommand implements ShellCommand {
 
+	String name;
+
+	public UseCommand() {
+		name = "use";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -32,7 +38,7 @@ public class UseCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "use";
-    }
+	public String getName(){
+		return name;
+	}
 }

@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.multifilemap;
 
 public class DropCommand implements ShellCommand {
 
+	String name;
+
+	public DropCommand() {
+		this.name = "drop";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -22,6 +28,6 @@ public class DropCommand implements ShellCommand {
 	
 	@Override
     public String getName() {
-        return "drop";
+        return name;
     }
 }

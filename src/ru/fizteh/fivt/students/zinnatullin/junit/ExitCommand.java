@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.junit;
 
 public class ExitCommand implements ShellCommand {
     
+	String name;
+
+	public ExitCommand() {
+		name = "exit";
+	}
+	
 	@Override
 	public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -18,8 +24,7 @@ public class ExitCommand implements ShellCommand {
     }
     
 	@Override
-	public String getName() {
-        return "exit";
-    }
-
+	public String getName(){
+		return name;
+	}
 }

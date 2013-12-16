@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.multifilemap;
 
 public class PutCommand implements ShellCommand {
     
+	String name;
+
+	public PutCommand() {
+		this.name = "put";
+	}
+	
 	@Override
 	public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -28,7 +34,7 @@ public class PutCommand implements ShellCommand {
 	
 	@Override
     public String getName() {
-        return "put";
+        return name;
     }
 
 }

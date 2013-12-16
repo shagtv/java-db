@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.multifilemap;
 
 public class ExitCommand implements ShellCommand {
     
+	String name;
+
+	public ExitCommand() {
+		this.name = "exit";
+	}
+	
 	@Override
 	public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -15,7 +21,7 @@ public class ExitCommand implements ShellCommand {
     
 	@Override
 	public String getName() {
-        return "exit";
+        return name;
     }
 
 }

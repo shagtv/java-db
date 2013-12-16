@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.junit;
 
 public class CommitCommand implements ShellCommand {
 
+	String name;
+
+	public CommitCommand() {
+		name = "commit";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -22,7 +28,7 @@ public class CommitCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "commit";
-    }
+	public String getName(){
+		return name;
+	}
 }

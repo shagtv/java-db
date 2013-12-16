@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.multifilemap;
 
 public class UseCommand implements ShellCommand {
 
+	String name;
+
+	public UseCommand() {
+		this.name = "use";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -22,6 +28,6 @@ public class UseCommand implements ShellCommand {
 	
 	@Override
     public String getName() {
-        return "use";
+        return name;
     }
 }

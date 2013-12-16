@@ -70,7 +70,7 @@ public class DBTable implements Table{
 			dirMap.put(nFile, fileMap);
 			data.put(nDir, dirMap);
 		}
-		if(!oldValue.equals(value)){
+		if(oldValue != null && !oldValue.equals(value)){
 			operations++;
 		}
 		return oldValue;

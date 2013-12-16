@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.junit;
 
 public class CreateCommand implements ShellCommand {
 
+	String name;
+
+	public CreateCommand() {
+		name = "create";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -21,7 +27,7 @@ public class CreateCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "create";
-    }
+	public String getName(){
+		return name;
+	}
 }

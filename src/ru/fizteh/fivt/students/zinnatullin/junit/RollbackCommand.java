@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.junit;
 
 public class RollbackCommand implements ShellCommand {
 
+	String name;
+
+	public RollbackCommand() {
+		name = "rollback";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -22,7 +28,7 @@ public class RollbackCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "rollback";
-    }
+	public String getName(){
+		return name;
+	}
 }

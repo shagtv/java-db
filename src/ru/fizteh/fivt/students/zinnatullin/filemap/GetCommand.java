@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.filemap;
 
 public class GetCommand implements ShellCommand {
 
+	String name;
+
+	public GetCommand() {
+		this.name = "get";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -21,7 +27,7 @@ public class GetCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "get";
-    }
+	public String getName(){
+		return name;
+	}
 }

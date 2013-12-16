@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.junit;
 
 public class SizeCommand implements ShellCommand {
 
+	String name;
+
+	public SizeCommand() {
+		name = "size";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -22,7 +28,7 @@ public class SizeCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "size";
-    }
+	public String getName(){
+		return name;
+	}
 }

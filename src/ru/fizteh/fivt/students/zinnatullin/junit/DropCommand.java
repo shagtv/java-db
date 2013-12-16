@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.junit;
 
 public class DropCommand implements ShellCommand {
 
+	String name;
+
+	public DropCommand() {
+		name = "drop";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -27,7 +33,7 @@ public class DropCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "drop";
-    }
+	public String getName(){
+		return name;
+	}
 }

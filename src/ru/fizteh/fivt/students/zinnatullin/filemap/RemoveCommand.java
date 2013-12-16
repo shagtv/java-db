@@ -2,6 +2,12 @@ package ru.fizteh.fivt.students.zinnatullin.filemap;
 
 public class RemoveCommand implements ShellCommand {
 	
+	String name;
+
+	public RemoveCommand() {
+		this.name = "remove";
+	}
+	
 	@Override
     public boolean execute(String args[]) {
         assert (args.length != 0);
@@ -22,8 +28,7 @@ public class RemoveCommand implements ShellCommand {
     }
 	
 	@Override
-    public String getName() {
-        return "remove";
-    }
-
+	public String getName(){
+		return name;
+	}
 }
