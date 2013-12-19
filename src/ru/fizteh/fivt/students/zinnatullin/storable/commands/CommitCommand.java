@@ -1,11 +1,13 @@
-package ru.fizteh.fivt.students.zinnatullin.storable;
+package ru.fizteh.fivt.students.zinnatullin.storable.commands;
 
-public class RollbackCommand implements ShellCommand {
+import ru.fizteh.fivt.students.zinnatullin.storable.*;
+
+public class CommitCommand implements ShellCommand {
 
 	String name;
 
-	public RollbackCommand() {
-		name = "rollback";
+	public CommitCommand() {
+		name = "commit";
 	}
 	
 	@Override
@@ -22,7 +24,7 @@ public class RollbackCommand implements ShellCommand {
 		}
 		
 		int operations = 0;
-		operations = Shell.getInstance().table.rollback();
+		operations = Shell.getInstance().table.commit();
 		Shell.printMessage("operations: " + operations);
         return true;
     }

@@ -1,11 +1,13 @@
-package ru.fizteh.fivt.students.zinnatullin.storable;
+package ru.fizteh.fivt.students.zinnatullin.storable.commands;
 
-public class SizeCommand implements ShellCommand {
+import ru.fizteh.fivt.students.zinnatullin.storable.*;
+
+public class RollbackCommand implements ShellCommand {
 
 	String name;
 
-	public SizeCommand() {
-		name = "size";
+	public RollbackCommand() {
+		name = "rollback";
 	}
 	
 	@Override
@@ -21,9 +23,9 @@ public class SizeCommand implements ShellCommand {
 			return false;
 		}
 		
-		int size = 0;
-		size = Shell.getInstance().table.size();
-		Shell.printMessage("size: " + size);
+		int operations = 0;
+		operations = Shell.getInstance().table.rollback();
+		Shell.printMessage("operations: " + operations);
         return true;
     }
 	

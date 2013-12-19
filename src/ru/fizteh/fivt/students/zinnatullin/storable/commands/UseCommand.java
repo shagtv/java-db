@@ -1,4 +1,6 @@
-package ru.fizteh.fivt.students.zinnatullin.storable;
+package ru.fizteh.fivt.students.zinnatullin.storable.commands;
+
+import ru.fizteh.fivt.students.zinnatullin.storable.*;
 
 public class UseCommand implements ShellCommand {
 
